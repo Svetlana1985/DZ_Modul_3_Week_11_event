@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+    <style>
+        /* body{
+            border: 1px solid rgb(102, 102, 151);
+           width: 690px;
+           height: auto;   
+        } */
+        .left{
+            background-color: rgb(102, 102, 151);
+            padding: 50px;
+           vertical-align: top;
+        }
+        .right{ 
+            background-color: rgb(233, 233, 202);
+            padding: 30px;
+        }
+        p:hover{
+            background-color: rgb(62, 62, 122);
+        }
+        p{
+            color: white;
+            padding: 10px;
+        }
+        aside{
+            display: inline-block;
+        }
+        progress {
+        background-color: green;
+        border: 0;
+        height: 20px;
+        border-radius: 9px;
+        
+        }
+        progress::-webkit-progress-bar{
+            background-color: white;
+            border: 1px solid rgb(156, 149, 149);
+            height: 20px;
+        }
+        progress + input{
+            display: block;
+        }
+        input{
+            width: 160px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Задание №3 -->
+    
+    <!-- <input type="button" id="myBtn" value="Hide/ show text">
+    
+    <div id="container">
+        <p id="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.<br/>
+        Repellendus, iusto alias odit aliquid a, facilis aperiam<br/>
+        tempore quos quisquam delectus atque, voluptate deserunt neque?<br/>
+        Odio vitae cum nihil iusto facilis.
+        </p>
+    </div> -->
+   
+    <!-- Задание №4 -->
+
+    <!-- <aside class="left">
+    <p id="valueHTML">
+        HTML
+    </p>
+    <p id="valueCSS">
+        CSS
+    </p>
+    <p id="valueJS">
+        JS
+    </p>
+   </aside>
+   <aside class="right">
+    <div id="textHTML">
+        Lorem HTML ipsum dolor sit amet consectetur adipisicing elit.<br/>
+        Iure tenetur unde debitis adipisci ipsam beatae, vitae ullam<br/>
+        voluptatum hic tempore! Quis, nisi. Ducimus quam quisquam commodi<br/>
+        quo autem impedit sapiente!
+    </div>
+
+    <div id="textCSS">
+        Lorem,  CSS ipsum dolor sit amet consectetur adipisicing elit.<br/>
+        Nam obcaecati voluptatem cumque dolorum ea odit minus animi<br/>
+        cupiditate eveniet, repellendus, doloremque nisi ullam voluptatum<br/>
+        dicta recusandae assumenda aliquam ipsam! Ipsa.
+    </div>
+
+    <div id="textJS">
+        Lorem ipsum JS dolor sit amet consectetur adipisicing elit.<br/>
+        Nesciunt dignissimos, dolores dolore rerum facere, est id<br/>
+        vel quod architecto illum consequuntur harum sed. Natus iste<br/>
+        quia eaque voluptatum suscipit odit?
+    </div>
+   </aside> -->
+   
+   <!-- Задание №6 -->
+
+   <progress id="progress" value="0" max="100"></progress>
+   
+   <input type="button" id="myBtn" value="Add 5 percent">
+   
+
+   <script>
+        //К заданию №3
+    //     const buttonElem = document.getElementById("myBtn");
+    //     const textEvent = document.getElementById("container");
+    //     let hidden = false;
+        
+    //     buttonElem.addEventListener("click",function(){
+    //         if (hidden) {
+	// 		textEvent.style.display = 'block';
+	// 		hidden = false;
+	// 	} else {
+	// 		textEvent.style.display = 'none';
+	// 		hidden = true;
+	// 	}
+	// });
+
+        //К заданию №4 
+        // let valueNum1 = document.getElementById("valueHTML");
+        // let valueNum2 = document.getElementById("valueCSS");
+        // let valueNum3 = document.getElementById("valueJS");
+
+        // let textNum1 = document.getElementById("textHTML");
+        // let textNum2 = document.getElementById("textCSS");
+        // let textNum3 = document.getElementById("textJS");
+
+       
+        // function showText(element, textElement) {
+        // textElement.style.display = "block";
+        // }
+
+        // function hideTexts() {
+        // textNum1.style.display = "none";
+        // textNum2.style.display = "none";
+        // textNum3.style.display = "none";
+        // }            
+        // valueNum1.addEventListener("mouseover", () => {
+        // hideTexts();
+        // showText(valueNum1, textNum1);
+        // });
+
+        // valueNum2.addEventListener("mouseover", () => {
+        // hideTexts();
+        // showText(valueNum2, textNum2);
+        // });
+
+        // valueNum3.addEventListener("mouseover", () => {
+        // hideTexts();
+        // showText(valueNum3, textNum3);
+        // });
+
+        // valueNum1.addEventListener("mouseout", () => {
+        // if (event.relatedTarget !== valueNum2 && event.relatedTarget !== valueNum3) {
+        // showText(valueNum1, textNum1);
+        // showText(valueNum2, textNum2);
+        // showText(valueNum3, textNum3);
+        // }
+        // });
+
+        // valueNum2.addEventListener("mouseout", () => {
+        // if (event.relatedTarget !== valueNum1 && event.relatedTarget !== valueNum3) {
+        // showText(valueNum1, textNum1);
+        // showText(valueNum2, textNum2);
+        // showText(valueNum3, textNum3);
+        // }
+        // });
+
+        // valueNum3.addEventListener("mouseout", () => {
+        // if (event.relatedTarget !== valueNum1 && event.relatedTarget !== valueNum2) {
+        // showText(valueNum1, textNum1);
+        // showText(valueNum2, textNum2);
+        // showText(valueNum3, textNum3);
+        //  }
+        // });
+
+        //К заданию №6
+
+        let buttonElem = document.getElementById("myBtn");
+        let progressBar = document.getElementById("progress")
+        let currentValue = 0; 
+
+        buttonElem.addEventListener("click", () => {
+        currentValue += 5; 
+        progressBar.value = currentValue; 
+
+        if (currentValue >= 100) {
+        buttonElem.disabled = true; }
+});
+       
+        
+    </script>
+</body>
+</html>
